@@ -12,25 +12,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		
-		
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		
 		<style type="text/css">
 		
 			.logo-img{   
 				/*play with borders and padding around images */
+				border:5px groove darkred;
+				padding:10px;
 			}
 			
 			div {
 				border: 1px  solid   red;
 				/*play with margins */
+				margin:20px;
 			}
 			
 			body{
 				background-color: pink;
 			}
 						
-			.box1, box2{
-				/* give both box1 and box2 the same font-family
+			.box1, .box2{
+				/* give both box1 and box2 the same font-family */
+				font-family:"Brush Script MT";
 			}
 			
 			.box1 a:link{	/*style only the links found in the box1 */
@@ -44,26 +48,116 @@
 			
 			.box1 {
 				/* Set appropriate width */
+				Width:200px;
+				float:left;
 			}
 			
 			.box2 {
 				/* set appropriate width */
-				/* change to allow scrollbars to appear */			
+				width:800px;
+				/* change to allow scrollbars to appear */
+				overflow:auto;
 			}
 			
 			/* use float to create desired layout with margin space between box1 and box2*/
 			
 			/* follow instructions (https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp) from w3schools to change navigation bar into drop-down list */
 			
+			/* Navbar container */
+			.navbar {
+				overflow: hidden;
+				background-color: #333;
+				font-family: Arial;
+			}
+
+			/* Links inside the navbar */
+			.navbar a {
+			  float: left;
+			  font-size: 16px;
+			  color: white;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			/* The dropdown container */
+			.dropdown {
+			  float: left;
+			  overflow: hidden;
+			  margin:0px;
+			}
+
+			/* Dropdown button */
+			.dropdown .dropbtn {
+			  font-size: 16px;
+			  border: none;
+			  outline: none;
+			  color: white;
+			  padding: 14px 16px;
+			  background-color: inherit;
+			  font-family: inherit; /* Important for vertical align on mobile phones */
+			  margin:0; /* Important for vertical align on mobile phones */
+			}
+
+			/* Add a red background color to navbar links on hover */
+			.navbar a:hover, .dropdown:hover .dropbtn {
+			  background-color: red;
+			}
+
+			/* Dropdown content (hidden by default) */
+			.dropdown-content {
+			  display: none;
+			  position: absolute;
+			  background-color: #f9f9f9;
+			  min-width: 160px;
+			  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			  z-index: 1;
+			  margin:0px;
+			}
+
+			/* Links inside the dropdown */
+			.dropdown-content a {
+			  float: none;
+			  color: black;
+			  padding: 12px 16px;
+			  text-decoration: none;
+			  display: block;
+			  text-align: left;
+			}
+
+			/* Add a grey background color to dropdown links on hover */
+			.dropdown-content a:hover {
+			  background-color: #ddd;
+			}
+
+			/* Show the dropdown menu on hover */
+			.dropdown:hover .dropdown-content {
+			  display: block;
+			}
+
+			
 		</style>
 		
-		<!-- <link rel="stylesheet" type="text/css" href="mystyle.css"> --> 
+		
 				
 		<title>Practice CSS</title>
 	</head>
 
 	<body>
 		<div class="navbar">
+			<a href="#home">Home</a>
+			<a href="#news">News</a>
+			<div class="dropdown">
+				<button class="dropbtn">Dropdown<i class="fa fa-caret-down"></i></button>
+				<div class="dropdown-content">
+					<a href="#">Link 1</a>
+					<a href="#">Link 2</a>
+					<a href="#">Link 3</a>
+				</div>
+			</div>
+		</div>
+
+		<!--<div class="navbar">
 			Rural Logo         
 			<a href="https://therural.ca/contact">Contact </a>    
 			<a href="https://therural.ca/yearbook">Yearbook</a>
